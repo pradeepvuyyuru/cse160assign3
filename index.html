@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3 - F1 Fuel Rush</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="viewport-panel">
+      <div class="topbar">
+        <div>
+          <h1>F1 Fuel Rush</h1>
+          <p>Collect six floating gas cans, return to the car, and trigger the victory lap.</p>
+        </div>
+        <div class="stat-grid">
+          <span id="fps">FPS: --</span>
+          <span id="gasCount">Gas: 0/6</span>
+          <span id="timer">Time: 0.00s</span>
+          <span id="boost">Boost: 1.0x</span>
+        </div>
+      </div>
+      <canvas id="webgl" width="960" height="640"></canvas>
+      <div class="mode-overlay" id="modeOverlay">
+        <div class="mode-card" id="mainMenu">
+          <h2>F1 Fuel Rush</h2>
+          <p>Choose how you want to enter the world.</p>
+          <div class="mode-actions">
+            <button id="freeRoamBtn">Free Roam</button>
+            <button id="gameModeBtn">Game Mode</button>
+          </div>
+        </div>
+        <div class="mode-card hidden" id="instructionsMenu">
+          <h2>Game Mode</h2>
+          <p>Collect all six floating red gas cans, then return to the blue F1 car in the pit lane. The timer starts when you first move.</p>
+          <p>Quick pickups give a temporary speed boost: within 8 seconds gives 1.3x, within 5 seconds gives 1.6x.</p>
+          <p>Use W A S D to move, Q/E or mouse drag to turn, and return to the car to launch its victory lap.</p>
+          <div class="mode-actions">
+            <button id="startGameBtn">Click to Start</button>
+            <button id="backMenuBtn" class="secondary">Back</button>
+          </div>
+        </div>
+      </div>
+      <div class="message" id="message">Move to start the timer. Collect the six floating red gas cans, then return to the blue F1 car.</div>
+    </section>
+
+    <aside class="side-panel">
+      <h2>Controls</h2>
+      <div class="controls">
+        <div><b>W A S D</b><span>Move</span></div>
+        <div><b>Q / E</b><span>Turn left / right</span></div>
+        <div><b>Mouse</b><span>Look around</span></div>
+        <div><b>F</b><span>Remove marker block</span></div>
+        <div><b>R</b><span>Add marker block</span></div>
+      </div>
+      <h2>Story</h2>
+      <p>You are the pit crew runner. Grab every gas can as fast as possible; quick pickups trigger speed boosts, and the car launches into a victory lap after you refuel it.</p>
+    </aside>
+  </main>
+
+  <script src="./matrix.js"></script>
+  <script src="./camera.js"></script>
+  <script src="./cube.js"></script>
+  <script src="./asg3.js"></script>
+</body>
+</html>
